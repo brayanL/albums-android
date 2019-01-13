@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "creapption.com.albums"
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -14,15 +14,21 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "ALBUMS_URL", "\"https://rallycoding.herokuapp.com/\""
+        }
+        debug {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "ALBUMS_URL", "\"https://rallycoding.herokuapp.com/\""
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.library"
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:support-annotations:28.0.0'
+    implementation "com.android.support:support-annotations:$rootProject.ext.library"
+    implementation "com.android.support:design:$rootProject.ext.library"
 
     //rxjava
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroid"
@@ -40,6 +46,9 @@ dependencies {
     //dagger2
     implementation "com.google.dagger:dagger:$rootProject.ext.dagger"
     annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.ext.dagger"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.ext.dagger"
+    implementation "com.google.dagger:dagger-android:$rootProject.ext.dagger"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.ext.dagger"
 
     //ButterKnife
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterKnife"
