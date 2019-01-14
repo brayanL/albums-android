@@ -1,4 +1,4 @@
-package creapption.com.albums;
+package creapption.com.albums.application;
 
 import android.app.Activity;
 import android.app.Application;

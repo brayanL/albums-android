@@ -1,5 +1,7 @@
 package creapption.com.albums.data.remote;
 
+import java.util.List;
+
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 
@@ -10,5 +12,5 @@ import retrofit2.http.GET;
 public interface AlbumsService {
 
     @GET("api/music_albums")
-    Observable<AlbumsResponseModel> getAlbums();
+    Observable<List<AlbumsResponseModel>> getAlbums();
 }

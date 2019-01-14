@@ -21,6 +21,10 @@ android {
             buildConfigField "String", "ALBUMS_URL", "\"https://rallycoding.herokuapp.com/\""
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -29,6 +33,8 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation "com.android.support:support-annotations:$rootProject.ext.library"
     implementation "com.android.support:design:$rootProject.ext.library"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.library"
+    implementation "com.android.support:cardview-v7:$rootProject.ext.library"
 
     //rxjava
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroid"
@@ -53,6 +59,9 @@ dependencies {
     //ButterKnife
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterKnife"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnife"
+
+    //Piccaso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

@@ -2,7 +2,7 @@ package creapption.com.albums.main.di;
 
 import javax.inject.Singleton;
 
-import creapption.com.albums.AlbumsApplication;
+import creapption.com.albums.application.AlbumsApplication;
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjectionModule;
